@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/RecipeComponent.css';
 import RecipeHeader from './RecipeHeader';
 import RecipeMain from './RecipeMain';
@@ -22,5 +23,15 @@ const RecipeComponent = (props) => (
 		 ))
 	}</div>
 )
+
+RecipeComponent.propTypes = {
+	title: PropTypes.string,
+	difficulty: PropTypes.string,
+	serves: PropTypes.number,
+	time: PropTypes.number,
+	desc: PropTypes.string,
+	directions: PropTypes.string,
+	ingredients: PropTypes.string
+}
 
 export default RecipeComponent;

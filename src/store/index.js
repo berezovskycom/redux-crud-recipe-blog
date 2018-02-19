@@ -1,86 +1,37 @@
 import { createStore } from 'redux';
 import reducer from '../reducers';
-import {
-	addGeneralInfo, 
-	addNewRecipe
-} from '../actions';
+import { addNewRecipe } from '../actions';
 
- const store = createStore(reducer);
-
-store.dispatch(addGeneralInfo(
-	'chicken soup', 
-	'traditional thai food',
-	'easy',
-	15,
-	2
-));
-
-store.dispatch(addGeneralInfo(
-	'chocolade cake', 
-	'your fav.',
-	'hard',
-	120,
-	8
-));
-
-// store.dispatch(addIngredients('chicken', 1000, 1));
-// store.dispatch(addIngredients('chocolade', 250, 1));
-// store.dispatch(addDirections('Get chicken'));
-// store.dispatch(addDirections('Cook chicken'));
-// store.dispatch(addDirections('Eat chicken'));
-// store.dispatch(toggleDirections(1));
+const store = createStore(reducer);
 
 store.dispatch(addNewRecipe(
-	'Chicken Soup', 
-	'Great Supper', 
-	'easy', 
-	15, 
-	2, 
-	[
-		{
-			step: 1,
-			direction: 'Buy Chicken'
-		},
-		{
-			step: 2,
-			direction: 'Eat Chicken'
-		}
-	],
-	[
-		{
-			ingredient: 'Chicken',
-			weight: '1kg',
-			quantity: 1
-		}
-	]))
-
-store.dispatch(addNewRecipe(
-	'Burger', 
-	'The worst dinner', 
+	0,
+	`Spaghetti`, 
+	`This recipe has been handed down from my mother. 
+	It is a family favorite and will not be replaced! 
+	(Definite husband pleaser!)"`, 
 	'medium', 
-	15, 
-	2, 
-	[
-		{
-			step: 1,
-			direction: 'Buy Chicken'
-		},
-		{
-			step: 2,
-			direction: 'Eat Chicken'
-		}
-	],
-	[
-		{
-			ingredient: 'Chicken',
-			weight: '1kg',
-			quantity: 1
-		}
-	]))
+	85, 
+	8, 
+	`Combine ground beef, onion, garlic, and 
+	green pepper in a large saucepan. Cook and 
+	stir until meat is brown and vegetables are tender. 
+	Drain grease. Stir diced tomatoes, tomato sauce, 
+	and tomato paste into the pan. Season with oregano, 
+	basil, salt, and pepper. Simmer spaghetti 
+	sauce for 1 hour, stirring occasionally.`,
 
-store.dispatch({
-	type: 'ADD_TITLE', 
-	title: 'New Chicken Soup'
-});
+	`1 pound ground beef 1 onion, 
+	chopped 4 cloves garlic, 
+	minced 1 small green bell pepper, 
+	diced 1 (28 ounce) can diced tomatoes 1 
+	(16 ounce) can tomato sauce, 
+	1 (6 ounce) can tomato 
+	paste 2 teaspoons dried oregano
+	2 teaspoons dried basil 1 teaspoon 
+	salt 1/2 teaspoon black pepper`
+))
 
 console.log(store.getState());
+
+export default store;

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class	RecipeMain extends Component {
 
@@ -34,6 +35,12 @@ class	RecipeMain extends Component {
 		</div>
 		)
 	}
+}
+
+RecipeMain.propTypes = {
+	desc: PropTypes.string,
+	directions: PropTypes.string,
+	ingredients: PropTypes.string
 }
 
 export default RecipeMain;

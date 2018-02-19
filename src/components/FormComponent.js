@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { addNewRecipe } from '../actions';
 import '../styles/FormComponent.css';
 
@@ -83,6 +84,10 @@ class FormComponent extends Component {
 			</form>
 		)
 	}
+}
+
+FormComponent.propTypes = {
+	store: PropTypes.object.isRequired
 }
 
 export default FormComponent;
